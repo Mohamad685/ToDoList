@@ -5,7 +5,7 @@
     position:absolute;
     display: flex;
     flex-direction: row;
-    gap: 4rem;
+    gap: 2rem;
     align-items:center;
     padding-left: 15%;
     font-family: Arial, Helvetica, sans-serif ;
@@ -80,7 +80,44 @@
 
 .todo-added{
     width: 45rem ;
+    padding: 3rem;
+    
+}
+
+.tasks-title{
+    border-bottom: 1px solid #ccc;
+    width: 40rem;
+    height: 3.5rem;
+    color: #6B4AD6; 
+    font-size: 2.18rem;
 }
 
 
+li{
+    border-bottom: 1px solid #ccc;
+    width: 40rem;
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
+.task-text{
+    margin-right: 26rem;
+    margin-left: 1rem;
+    color: #6B4AD6;
+
+}
+
+.label-check{
+    font-size: 11px;
+    font-style:italic;
+    font-weight: bold;
+    color:#6B4AD6;
+}
+.delete-button{
+    margin-right: 1rem;
+    margin-left: 1rem;
+    width: 5rem;
+    margin-top: 0%;
+}
