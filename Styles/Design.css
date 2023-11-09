@@ -144,6 +144,10 @@ ol{
     overflow-x:hidden;
 }
 
+.completed-taskorder{
+    filter: blur(0.1rem);
+}
+
 .edit-button-img{
     width: 1.5rem;
     height: 1.5rem;
