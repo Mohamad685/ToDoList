@@ -78,6 +78,27 @@
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   }
 
+.date-task{
+    width: 8rem;
+    height: 1.5rem;
+    background-color: white;
+    align-self: flex-end;
+    margin-top: -1.75rem;
+    margin-right:2rem ;
+    box-shadow: none;
+    border-color: #6B4AD6;
+    border-radius: 2rem;
+    color: #6B4AD6;
+    text-align: center;
+}
+
+.date-label{
+    margin-top: 1rem;
+    padding-left: 1rem;
+    align-self: flex-start;
+    width:5rem;
+    
+}
 .emptytask-notice{
     color: red;
     font-size: 0.8rem;
@@ -118,7 +139,7 @@ ol{
 }
 
 .task-text{
-    width: 27rem;
+    width: 22rem;
     color: #6B4AD6;
     overflow-x:hidden;
 }
@@ -135,6 +156,10 @@ ol{
     cursor: pointer;
     margin: 0.6rem;
     margin-right: 0.2rem;
+}
+
+.date-todo{
+    width: 4rem;
 }
 .label-check{
     font-size: 10px;

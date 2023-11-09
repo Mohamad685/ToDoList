@@ -11,35 +11,24 @@
 
     <div class="background-style">
         
-        <div class="todo-box todo-actions">
+        <div class="todo-box todo-actions" id="todo-container">
             <p class="title-actions">Actions</p>
-            <label for="New Task" class="add-title">Input a new task:</label>
-            <input type="text" class="add-task" placeholder="Write here:">
-            <button class="addition-button"> + </button>
-            <!-- <p class="emptytask-notice">*Please Enter a statement</p> -->
+            <label for="input-task" class="add-title">Input a new task:</label>
+            <input type="text" class="add-task" placeholder="Write here:" id="input-task">
+            <Label for="task-date" class=" add-title date-label">Due Date:</Label>
+            <input type="date" class=" addition-button date-task" id="task-date">
+            <button class="addition-button" id="taskadd-button"> + </button>
         </div>
         
         <div class="todo-box todo-added">
             <div class="todo-title">
-                <ol>
+                <ol id="tasks-list">
                     <p class="tasks-title">Task Lists</p>
-                    
-                    <li> 
-                        <div class="listitems-style"> 
-                        <span class="task-text">Test-1</span>
-                        <input type="checkbox" class="checkbox">
-                        <label for="checkbox" class="label-check">Completed</label>
-                        <button class="addition-button edit-button"><img src="Assets/edit.png " alt="edit" class="edit-button-img" ></button>
-                        <button class=" addition-button delete-button">Delete</button>
-                        </div>
-                        
-                    </li>
-
                 </ol>
             </div>
         </div>
 
     </div>
-    
+    <script src="./Script/script.js"></script>
 </body>
 </html>
