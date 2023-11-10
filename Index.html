@@ -18,27 +18,16 @@
             <Label for="task-date" class=" add-title date-label">Due Date:</Label>
             <input type="date" class=" addition-button date-task" id="task-date">
             <button class="addition-button" id="taskadd-button"> + </button>
-            <label for="filter" class="add-title sorttask-label">Sort Items by:</label>
-            <button class="addition-button filter-button">All</button>
-            <button class="addition-button filter-button">Completed</button>
-            <button class="addition-button filter-button">Active</button>
+            <label class="add-title sorttask-label">Sort Items by:</label>
+            <button class="addition-button filter-button" id="all-include" name="filter">All</button>
+            <button class="addition-button filter-button" id="completed-tasks" name="filter">Completed</button>
+            <button class="addition-button filter-button" id="active-tasks" name="filter">Active</button>
         </div>
         
         <div class="todo-box todo-added">
             <div class="todo-title">
                 <ol id="tasks-list">
                     <p class="tasks-title">Task Lists</p>
-
-                    <!-- <li> 
-                        <div class="listitems-style"> 
-                        <span class="task-text " >${inputTask.value}</span>
-                        <span class="label-check date-todo">${inputDate.value}</span>
-                        <input type="checkbox" class="checkbox" id="checkbox-complete">
-                        <label for="checkbox-complete" class="label-check">Completed</label>
-                        <button class="addition-button edit-button" id="chechbox"><img src="Assets/edit.png " alt="edit" class="edit-button-img" ></button>
-                        <button class=" addition-button delete-button">Delete</button>
-                        </div>
-                    </li> -->
                 </ol>
             </div>
         </div>
