@@ -160,6 +160,7 @@ ol{
     cursor: pointer;
     margin: 0.6rem;
     margin-right: 0.2rem;
+    color: #6B4AD6;
 }
 
 .date-todo{
@@ -176,4 +177,9 @@ ol{
     margin-left: 1rem;
     width: 5rem;
     margin-top: 0%;
+}
+
+.sorttask-label{
+    margin-top: 2rem;
+    font-size: 1.2rem;
 }

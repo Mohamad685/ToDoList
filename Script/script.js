@@ -1,4 +1,4 @@
-let tasks={};
+let tasks={}
 let inputTask = document.getElementById("input-task")
 let inputDate=document.getElementById("task-date")
 let inputTaskButton = document.getElementById("taskadd-button")
@@ -6,6 +6,7 @@ let containerToDo= document.getElementById("todo-container")
 let redNotice=''
 let TasksListAdd=document.getElementById('tasks-list')
 let ItemListElement = document.getElementsByTagName('li')
+let editButton= document.getElementById('editbutton-id')
 
 //add the tasks
 inputTaskButton.addEventListener("click", function(){
@@ -33,14 +34,14 @@ inputTaskButton.addEventListener("click", function(){
         
         // adding the input data to the tasks list
         TasksListAdd.innerHTML += 
-                        `<li> 
+                        `<li draggable= 'true'> 
                         <div class="listitems-style"> 
                         <span class="task-text">${inputTask.value}</span>
                         <span class="label-check date-todo">${inputDate.value}</span>
                         <input type="checkbox" class="checkbox" id="checkbox-complete">
                         <label for="checkbox-complete" class="label-check">Completed</label>
-                        <button class="addition-button edit-button" id="chechbox"><img src="Assets/edit.png " alt="edit" class="edit-button-img" ></button>
-                        <button class=" addition-button delete-button">Delete</button>
+                        <button class="edit-button addition-button ">...</button>
+                        <button class=" addition-button delete-button ">Delete</button>
                         </div>
                         
                     </li>`
@@ -62,3 +63,44 @@ TasksListAdd.addEventListener("change",function(e){ //targeting the list after t
             listItem.classList.remove('completed-taskorder')
         }
 })
+// deletion of a task
+TasksListAdd.addEventListener("click",function(e){
+    if(e.target.classList.contains('delete-button')){
+        let listItem=e.target.closest('li')
+        let taskName=taskText.textContent
+        delete tasks[taskName]
+        listItem.remove()
+
+    }
+})
+
+// editing of the task
+
+TasksListAdd.addEventListener("click",function(e){
+    
+    if (e.target.classList.contains('delete-button')) {
+      let listItem = e.target.closest('li')
+      let taskText = listItem.getElementsByClassName('task-text')[0]
+      let taskName = taskText.textContent
+      delete tasks[taskName]
+      listItem.remove()
+   
+    } else if (e.target.classList.contains('edit-button')) {
+      
+        let listItem = e.target.closest('li')
+        let taskText = listItem.getElementsByClassName('task-text')[0]
+        let newTask = prompt("Edit Your Task:")
+  
+      if (newTask !== 0 && newTask.trim() !== "") {
+        
+        let oldTaskName = taskText.textContent
+        tasks[newTask] = tasks[oldTaskName]
+        delete tasks[oldTaskName]
+        
+        taskText.textContent = newTask
+      } else {
+        alert("Enter a valid task")
+      }
+    }
+  })
+
