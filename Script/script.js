@@ -1,12 +1,12 @@
-let tasks={}
-let inputTask = document.getElementById("input-task")
-let inputDate=document.getElementById("task-date")
-let inputTaskButton = document.getElementById("taskadd-button")
-let containerToDo= document.getElementById("todo-container")
-let redNotice=''
-let TasksListAdd=document.getElementById('tasks-list')
-let ItemListElement = document.getElementsByTagName('li')
-let editButton= document.getElementById('editbutton-id')
+const tasks={}
+const inputTask = document.getElementById("input-task")
+const inputDate=document.getElementById("task-date")
+const inputTaskButton = document.getElementById("taskadd-button")
+const containerToDo= document.getElementById("todo-container")
+const redNotice=''
+const TasksListAdd=document.getElementById('tasks-list')
+const ItemListElement = document.getElementsByTagName('li')
+const editButton= document.getElementById('editbutton-id')
 
 //add the tasks
 function addingtask(e){
@@ -18,11 +18,8 @@ function addingtask(e){
             redNotice.textContent = '*Please Enter a statement or a date'
             redNotice.classList.add('emptytask-notice')
             containerToDo.appendChild(redNotice)
+        }else{
         }
-        else
-        {
-        }
-
     } 
     else{
         if (redNotice){ //if the notice is found
@@ -55,7 +52,9 @@ function addingtask(e){
 
 
 function completecheck(e){
-    let listItem=e.target.closest('li') // assign the closest function to  retutn the checked task(li)  https://allthingssmitty.com/2019/03/25/using-closest-to-return-the-correct-dom-element/
+    
+    const listItem=e.target.closest('li') // assign the closest function to  retutn the checked task(li)  https://allthingssmitty.com/2019/03/25/using-closest-to-return-the-correct-dom-element/
+    
     if(e.target.checked){
         listItem.classList.add('completed-taskorder')
     }
@@ -67,8 +66,8 @@ function completecheck(e){
 
 function deletetask(e){
     if(e.target.classList.contains('delete-button')){
-        let listItem=e.target.closest('li')
-        let taskName=taskText.textContent
+        const listItem=e.target.closest('li')
+        const taskName=taskText.textContent
         delete tasks[taskName]
         listItem.remove()
     }
@@ -76,22 +75,23 @@ function deletetask(e){
 
 
 function edittask(e){
+    
+    const listItem = e.target.closest('li')
+    const taskText = listItem.getElementsByClassName('task-text')[0]
+    
     if (e.target.classList.contains('delete-button')) {
-        let listItem = e.target.closest('li')
-        let taskText = listItem.getElementsByClassName('task-text')[0]
-        let taskName = taskText.textContent
+    
+        const taskName = taskText.textContent
         delete tasks[taskName]
         listItem.remove()
      
       } else if (e.target.classList.contains('edit-button')) {
         
-          let listItem = e.target.closest('li')
-          let taskText = listItem.getElementsByClassName('task-text')[0]
-          let newTask = prompt("Edit Your Task:")
+          const newTask = prompt("Edit Your Task:")
     
         if (newTask !== 0 && newTask.trim() !== "") {
           
-          let oldTaskName = taskText.textContent
+          const oldTaskName = taskText.textContent
           tasks[newTask] = tasks[oldTaskName]
           delete tasks[oldTaskName]
           
@@ -102,14 +102,14 @@ function edittask(e){
     }
 }
 
-
+// Addition of a new task
 inputTaskButton.addEventListener("click", (e)=>addingtask(e))
-// Check the completed task
-TasksListAdd.addEventListener("change",(e) => completecheck(e)) //targeting the list after the user addition
 
-// deletion of a task
+// Checking the completed task
+TasksListAdd.addEventListener("change",(e) => completecheck(e)) 
+
+// deleting of a task
 TasksListAdd.addEventListener("click",(e) => deletetask(e))
 
-// editing of the task
+// editing of an old task
 TasksListAdd.addEventListener("click",(e) => edittask(e))
-
