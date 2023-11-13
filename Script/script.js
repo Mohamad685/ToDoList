@@ -57,7 +57,7 @@ function completecheck(e){
     
     const listItem=e.target.closest('li') // assign the closest function to  retutn the checked task(li)  https://allthingssmitty.com/2019/03/25/using-closest-to-return-the-correct-dom-element/
     
-    //checking if the checkbox is checked
+    //checking if the checkbox is checked https://stackoverflow.com/questions/6358673/javascript-checkbox-onchange
     if(e.target.checked){
         listItem.classList.add('completed-taskorder')
     }
@@ -69,7 +69,7 @@ function completecheck(e){
 // function to delete tasks
 function deletetask(e){
     // checking if contains delete button id
-    if(e.target.classList.contains('delete-button')){
+    if(e.target.classList.contains('delete-button')){  //https://tpiros.dev/blog/contains-vs-includes/
         const listItem=e.target.closest('li')
         const taskName=taskText.textContent
         delete tasks[taskName]
